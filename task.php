@@ -285,12 +285,12 @@ print("#####q15#####".PHP_EOL);
 
 $data1 = ["name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin"];
 
-$new_data = [];
-foreach ($data as $one_data) {
-  array_push($new_data, $one_data);
-}
 
-print_r($new_data);
+if( array_key_exists('age',$data1) ) {
+  print('OK'.PHP_EOL);
+} else {
+  print('NG'.PHP_EOL);
+}
 
 $data2 = ["name" => "yamada", "hobby" => "baseball", "role" => "normal"];
 
@@ -327,14 +327,28 @@ echo PHP_EOL;
 
 ?>
 
-
+<?php
 print("#####q17#####".PHP_EOL);
 
 
 class User
 {
 
-# コードを追加
+  protected $name;
+    protected $age;
+    protected $gender;
+
+    function __construct($user_name, $user_age, $user_gender) {
+        $this->name = $user_name;
+        $this->age = $user_age;
+        $this->gender = $user_gender;
+    }
+
+    function info() {
+        print("名前:".$this->name.PHP_EOL);
+        print("年齢:".$this->age.PHP_EOL);
+        print("性別:".$this->gender.PHP_EOL);
+    }
 
 }
 
@@ -347,9 +361,32 @@ $user2->info();
 
 echo PHP_EOL;
 
+?>
+
+<?php
+
 print("#####q18#####".PHP_EOL);
 
-# コードを追加
+{
+
+  protected $name;
+  protected $age;
+
+  function __construct($user_name, $user_age) {
+      $this->name = $user_name;
+      $this->age = $user_age;
+  }
+
+  function introduce() {
+      if($this->age >= 20){
+          print("こんにちは,".$this->name."と申します。宜しくお願いいたします。".PHP_EOL);
+      }else{
+          print("はいさいまいど〜，".$this->name."です！！！".PHP_EOL);
+      }
+  }
+
+}
+
 
 $man1 = new Man("あじー", 32);
 $man2 = new Man("ゆたぼん", 10);
@@ -358,6 +395,10 @@ $man1->introduce();
 $man2->introduce();
 
 echo PHP_EOL;
+
+?>
+
+<?php
 
 print("#####q19#####".PHP_EOL);
 class Item{
