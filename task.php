@@ -404,7 +404,7 @@ print("#####q19#####".PHP_EOL);
 class Item{
 # 以下を修正して下さい
 
-protected $name;
+public $name;
 
 function __construct($book_name){
 $this->name = $book_name;
@@ -417,6 +417,9 @@ print($book->name.PHP_EOL);
 
 echo PHP_EOL;
 
+?>
+
+<?php
 print("#####q20#####".PHP_EOL);
 class Human
 {
@@ -428,7 +431,13 @@ class Human
 class Zoo
 {
 
-# コードを追加
+  public $name;
+  public $age;
+
+  function __construct($user_name, $user_age) {
+      $this->name = $user_name;
+      $this->age = $user_age;
+  }
 
 }
 
@@ -446,3 +455,30 @@ $zoo->info_entry_fee($human);
 }
 
 echo PHP_EOL;
+
+?>
+
+print("#####q21#####".PHP_EOL);
+
+<?php
+
+for ($i = 1; $i <= 30; $i++){
+  $result = '';
+
+ if ($i % 3 == 0 ){
+    $result .= 'Fizz';
+ }
+ if ($i % 5 == 0 ){
+    $result .= 'Buzz';
+ }
+ if ($i % 7 == 0 ){
+    $result .= 'Hoge';
+ }
+ if ($result == '') {
+    $result .= (string) $i;
+ }
+
+  echo $result. PHP_EOL;
+}
+
+?>
