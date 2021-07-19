@@ -363,30 +363,32 @@ echo PHP_EOL;
 
 ?>
 
-<?php
+
 
 print("#####q18#####".PHP_EOL);
 
+<?php
+
+class Man
 {
 
-  protected $name;
-  protected $age;
+    protected $name;
+    protected $age;
 
-  function __construct($user_name, $user_age) {
-      $this->name = $user_name;
-      $this->age = $user_age;
-  }
+    function __construct($user_name, $user_age) {
+        $this->name = $user_name;
+        $this->age = $user_age;
+    }
 
-  function introduce() {
-      if($this->age >= 20){
-          print("こんにちは,".$this->name."と申します。宜しくお願いいたします。".PHP_EOL);
-      }else{
-          print("はいさいまいど〜，".$this->name."です！！！".PHP_EOL);
-      }
-  }
+    function introduce() {
+        if($this->age >= 20){
+            print("こんにちは,".$this->name."と申します。宜しくお願いいたします。".PHP_EOL);
+        }else{
+            print("はいさいまいど〜，".$this->name."です！！！".PHP_EOL);
+        }
+    }
 
 }
-
 
 $man1 = new Man("あじー", 32);
 $man2 = new Man("ゆたぼん", 10);
@@ -395,6 +397,8 @@ $man1->introduce();
 $man2->introduce();
 
 echo PHP_EOL;
+
+
 
 ?>
 
@@ -424,7 +428,13 @@ print("#####q20#####".PHP_EOL);
 class Human
 {
 
-# コードを追加
+  public $name;
+  public $age;
+
+  function __construct($user_name, $user_age) {
+      $this->name = $user_name;
+      $this->age = $user_age;
+  }
 
 }
 
